@@ -2,8 +2,8 @@
 // Created by david on 2017/9/25.
 //
 
-#ifndef FFMPEGMUSIC_FFMPEGMUSIC_H
-#define FFMPEGMUSIC_FFMPEGMUSIC_H
+#ifndef __FFMPEGMUSIC_FFMPEGMUSIC_H__
+#define __FFMPEGMUSIC_FFMPEGMUSIC_H__
 
 #include <jni.h>
 #include <string>
@@ -26,3 +26,5 @@ int createFFmpeg(int *rate,int *channel);
 int getPcm(void **pcm,size_t *pcm_size);
 
 void realseFFmpeg();
+
+#endif

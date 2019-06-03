@@ -11,15 +11,18 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         sourceSets {
             main {
-                jniLibs.srcDirs = ['libs']
+                jniLibs.srcDir 'src/main/jni/libs'
+                jni.srcDirs = []
             }
         }
         externalNativeBuild {
             cmake {
                 cppFlags "-frtti -fexceptions"
-                abiFilters 'armeabi'
             }
         }
+ndk{
+    abiFilters "armeabi-v7a"
+}
     }
     buildTypes {
         release {

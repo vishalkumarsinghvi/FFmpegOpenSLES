@@ -16,14 +16,14 @@ int audio_stream_idx=-1;
 //opensl es调用 int * rate,int *channel
 int createFFmpeg(int *rate,int *channel){
     av_register_all();
-    char *input = "/sdcard/input.mp3";
+    char *input = const_cast<char *>("/sdcard/Download/1280.mp4");
     pFormatCtx = avformat_alloc_context();
     LOGE("Lujng %s",input);
     LOGE("xxx %p",pFormatCtx);
     int error;
     char buf[] = "";
     //打开视频地址并获取里面的内容(解封装)
-    if (error = avformat_open_input(&pFormatCtx, input, NULL, NULL) < 0) {
+    if (avformat_open_input(&pFormatCtx, input, NULL, NULL) < 0) {
         av_strerror(error, buf, 1024);
         // LOGE("%s" ,inputPath)
         LOGE("Couldn't open file %s: %d(%s)", input, error, buf);
